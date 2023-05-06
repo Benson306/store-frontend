@@ -509,7 +509,7 @@ class ShopCheckout extends PolymerElement {
       //         }
       //       }}));
       //   });
-      this.$.checkoutForm.action = 'http://localhost:3000/checkout';
+      // this.$.checkoutForm.action = 'http://localhost:3000/checkout';
 
       this.$.checkoutForm.submit();
     }

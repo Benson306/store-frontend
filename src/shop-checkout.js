@@ -148,216 +148,158 @@ class ShopCheckout extends PolymerElement {
                       </shop-md-decorator>
                     </shop-input>
                   </div>
-                  <h2 id="shipAddressHeading">Shipping Address</h2>
-                  <div class="row input-row">
-                    <shop-input>
-                      <input type="text" id="shipAddress" name="shipAddress" pattern=".{5,}"
-                          placeholder="Address" required
-                          aria-labelledby="shipAddressLabel shipAddressHeading">
-                      <shop-md-decorator error-message="Invalid Address" aria-hidden="true">
-                        <label id="shipAddressLabel">Address</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
-                  <div class="row input-row">
-                    <shop-input>
-                      <input type="text" id="shipCity" name="shipCity" pattern=".{2,}"
-                          placeholder="City" required
-                          aria-labelledby="shipCityLabel shipAddressHeading">
-                      <shop-md-decorator error-message="Invalid City" aria-hidden="true">
-                        <label id="shipCityLabel">City</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
-                  <div class="row input-row">
-                    <shop-input>
-                      <input type="text" id="shipState" name="shipState" pattern=".{2,}"
-                          placeholder="State/Province" required
-                          aria-labelledby="shipStateLabel shipAddressHeading">
-                      <shop-md-decorator error-message="Invalid State/Province" aria-hidden="true">
-                        <label id="shipStateLabel">State/Province</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                    <shop-input>
-                      <input type="text" id="shipZip" name="shipZip" pattern=".{4,}"
-                          placeholder="Zip/Postal Code" required
-                          aria-labelledby="shipZipLabel shipAddressHeading">
-                      <shop-md-decorator error-message="Invalid Zip/Postal Code" aria-hidden="true">
-                        <label id="shipZipLabel">Zip/Postal Code</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
-                  <div class="column">
-                    <label id="shipCountryLabel" class="shop-select-label">Country</label>
-                    <shop-select>
-                      <select id="shipCountry" name="shipCountry" required
-                          aria-labelledby="shipCountryLabel shipAddressHeading">
-                        <option value="US" selected>United States</option>
-                        <option value="CA">Canada</option>
-                      </select>
-                      <shop-md-decorator aria-hidden="true">
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-select>
-                  </div>
-                  <h2 id="billAddressHeading">Billing Address</h2>
-                  <div class="billing-address-picker">
-                    <shop-checkbox>
-                      <input type="checkbox" id="setBilling" name="setBilling"
-                          checked$="[[hasBillingAddress]]" on-change="_toggleBillingAddress">
-                      <shop-md-decorator></shop-md-decorator aria-hidden="true">
-                    </shop-checkbox>
-                    <label for="setBilling">Use different billing address</label>
-                  </div>
-                  <div hidden$="[[!hasBillingAddress]]">
-                    <div class="row input-row">
-                      <shop-input>
-                        <input type="text" id="billAddress" name="billAddress" pattern=".{5,}"
-                            placeholder="Address" required$="[[hasBillingAddress]]"
-                            autocomplete="billing street-address"
-                            aria-labelledby="billAddressLabel billAddressHeading">
-                        <shop-md-decorator error-message="Invalid Address" aria-hidden="true">
-                          <label id="billAddressLabel">Address</label>
-                          <shop-underline></shop-underline>
-                        </shop-md-decorator>
-                      </shop-input>
-                    </div>
-                    <div class="row input-row">
-                      <shop-input>
-                        <input type="text" id="billCity" name="billCity" pattern=".{2,}"
-                            placeholder="City" required$="[[hasBillingAddress]]"
-                            autocomplete="billing address-level2"
-                            aria-labelledby="billCityLabel billAddressHeading">
-                        <shop-md-decorator error-message="Invalid City" aria-hidden="true">
-                          <label id="billCityLabel">City</label>
-                          <shop-underline></shop-underline>
-                        </shop-md-decorator>
-                      </shop-input>
-                    </div>
-                    <div class="row input-row">
-                      <shop-input>
-                        <input type="text" id="billState" name="billState" pattern=".{2,}"
-                            placeholder="State/Province" required$="[[hasBillingAddress]]"
-                            autocomplete="billing address-level1"
-                            aria-labelledby="billStateLabel billAddressHeading">
-                        <shop-md-decorator error-message="Invalid State/Province" aria-hidden="true">
-                          <label id="billStateLabel">State/Province</label>
-                          <shop-underline></shop-underline>
-                        </shop-md-decorator>
-                      </shop-input>
-                      <shop-input>
-                        <input type="text" id="billZip" name="billZip" pattern=".{4,}"
-                            placeholder="Zip/Postal Code" required$="[[hasBillingAddress]]"
-                            autocomplete="billing postal-code"
-                            aria-labelledby="billZipLabel billAddressHeading">
-                        <shop-md-decorator error-message="Invalid Zip/Postal Code" aria-hidden="true">
-                          <label id="billZipLabel">Zip/Postal Code</label>
-                          <shop-underline></shop-underline>
-                        </shop-md-decorator>
-                      </shop-input>
-                    </div>
-                    <div class="column">
-                      <label id="billCountryLabel" class="shop-select-label">Country</label>
-                      <shop-select>
-                        <select id="billCountry" name="billCountry" required$="[[hasBillingAddress]]"
-                            autocomplete="billing country"
-                            aria-labelledby="billCountryLabel billAddressHeading">
-                          <option value="US" selected>United States</option>
-                          <option value="CA">Canada</option>
-                        </select>
-                        <shop-md-decorator aria-hidden="true">
-                          <shop-underline></shop-underline>
-                        </shop-md-decorator>
-                      </shop-select>
-                    </div>
-                  </div>
+                  
                 </section>
 
-                <section>
-                  <h2>Payment Method</h2>
-                  <div class="row input-row">
-                    <shop-input>
-                      <input type="text" id="ccName" name="ccName" pattern=".{3,}"
-                          placeholder="Cardholder Name" required
-                          autocomplete="cc-name">
-                      <shop-md-decorator error-message="Invalid Cardholder Name" aria-hidden="true">
-                        <label for="ccName">Cardholder Name</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
-                  <div class="row input-row">
-                    <shop-input>
-                      <input type="tel" id="ccNumber" name="ccNumber" pattern="[\\d\\s]{15,}"
-                          placeholder="Card Number" required
-                          autocomplete="cc-number">
-                      <shop-md-decorator error-message="Invalid Card Number" aria-hidden="true">
-                        <label for="ccNumber">Card Number</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
-                  <div class="row input-row">
-                    <div class="column">
-                      <label for="ccExpMonth">Expiry</label>
+                <section> 
+                  <h2>Select Delivery Location</h2>  
+                  <div class="column">
                       <shop-select>
-                        <select id="ccExpMonth" name="ccExpMonth" required
-                             autocomplete="cc-exp-month" aria-label="Expiry month">
-                          <option value="01" selected>Jan</option>
-                          <option value="02">Feb</option>
-                          <option value="03">Mar</option>
-                          <option value="04">Apr</option>
-                          <option value="05">May</option>
-                          <option value="06">Jun</option>
-                          <option value="07">Jul</option>
-                          <option value="08">Aug</option>
-                          <option value="09">Sep</option>
-                          <option value="10">Oct</option>
-                          <option value="11">Nov</option>
-                          <option value="12">Dec</option>
+                        <select id="shipCountry" name="shipCountry" required
+                            aria-labelledby="shipCountryLabel shipAddressHeading">
+                            <option value="Nairobi Area">Nairobi Area - Ksh250.00</option>
+                            <option value="Nairobi">Nairobi - Ksh260.00</option>
+                            <option value="Athi River">Athi River - Ksh280.00</option>
+                            <option value="Gilgil">Gilgil - Ksh280.00</option>
+                            <option value="Juja">Juja - Ksh280.00</option>
+                            <option value="Kangundo">Kangundo - Ksh280.00</option>
+                            <option value="Kiambu">Kiambu - Ksh280.00</option>
+                            <option value="Kikuyu">Kikuyu - Ksh280.00</option>
+                            <option value="Kitengela">Kitengela - Ksh280.00</option>
+                            <option value="Machakos">Machakos - Ksh280.00</option>
+                            <option value="Ongata Rongai">Ongata Rongai - Ksh280.00</option>
+                            <option value="Ruiru">Ruiru - Ksh280.00</option>
+                            <option value="Thika">Thika - Ksh280.00</option>
+                            <option value="Gatundu">Gatundu - Ksh300.00</option>
+                            <option value="Githunguri">Githunguri - Ksh300.00</option>
+                            <option value="Karatina">Karatina - Ksh300.00</option>
+                            <option value="Kutus">Kutus - Ksh300.00</option>
+                            <option value="Limuru">Limuru - Ksh300.00</option>
+                            <option value="Muranga">Muranga - Ksh300.00</option>
+                            <option value="Naivasha">Naivasha - Ksh300.00</option>
+                            <option value="Nakuru">Nakuru - Ksh300.00</option>
+                            <option value="Ngong">Ngong - Ksh300.00</option>
+                            <option value="Nyeri">Nyeri - Ksh300.00</option>
+                            <option value="Othaya">Othaya - Ksh300.00</option>
+                            <option value="Embu">Embu - Ksh320.00</option>
+                            <option value="Kerugoya">Kerugoya - Ksh320.00</option>
+                            <option value="Molo">Molo - Ksh320.00</option>
+                            <option value="Tala">Tala - Ksh320.00</option>
+                            <option value="Chuka">Chuka - Ksh330.00</option>
+                            <option value="Kagio">Kagio - Ksh330.00</option>
+                            <option value="Kangema">Kangema - Ksh330.00</option>
+                            <option value="Kiganjo">Kiganjo - Ksh330.00</option>
+                            <option value="Kijabe">Kijabe - Ksh330.00</option>
+                            <option value="Kilgoris">Kilgoris - Ksh330.00</option>
+                            <option value="Matuu">Matuu - Ksh330.00</option>
+                            <option value="Mwea">Mwea - Ksh330.00</option>
+                            <option value="Narok">Narok - Ksh330.00</option>
+                            <option value="Nyahururu">Nyahururu - Ksh330.00</option>
+                            <option value="Sagana">Sagana - Ksh330.00</option>
+                            <option value="Eldoret">Eldoret - Ksh340.00</option>
+                            <option value="Isinya">Isinya - Ksh340.00</option>
+                            <option value="Kitui">Kitui - Ksh340.00</option>
+                            <option value="Makuyu">Makuyu - Ksh340.00</option>
+                            <option value="Sultan Hamud">Sultan Hamud - Ksh340.00</option>
+                            <option value="Emali">Emali - Ksh350.00</option>
+                            <option value="Engineer">Engineer - Ksh350.00</option>
+                            <option value="Kajiado">Kajiado - Ksh350.00</option>
+                            <option value="Kericho">Kericho - Ksh350.00</option>
+                            <option value="Kibwezi">Kibwezi - Ksh350.00</option>
+                            <option value="Makindu">Makindu - Ksh350.00</option>
+                            <option value="Makutano">Makutano - Ksh350.00</option>
+                            <option value="Njoro">Njoro - Ksh350.00</option>
+                            <option value="Murarandia">Murarandia - Ksh370.00</option>
+                            <option value="Kisii">Kisii - Ksh380.00</option>
+                            <option value="Kisumu">Kisumu - Ksh380.00</option>
+                            <option value="Meru">Meru - Ksh380.00</option>
+                            <option value="Nanyuki">Nanyuki - Ksh380.00</option>
+                            <option value="Sotik">Sotik - Ksh390.00</option>
+                            <option value="Wote">Wote - Ksh390.00</option>
+                            <option value="Bomet">Bomet - Ksh400.00</option>
+                            <option value="Bungoma">Bungoma - Ksh400.00</option>
+                            <option value="Chogoria">Chogoria - Ksh400.00</option>
+                            <option value="Eldama Ravine">Eldama Ravine - Ksh400.00</option>
+                            <option value="Kakamega">Kakamega - Ksh400.00</option>
+                            <option value="Kangari">Kangari - Ksh400.00</option>
+                            <option value="Litein">Litein - Ksh400.00</option>
+                            <option value="Mwingi">Mwingi - Ksh400.00</option>
+                            <option value="Naromoru">Naromoru - Ksh400.00</option>
+                            <option value="Nkubu">Nkubu - Ksh400.00</option>
+                            <option value="Nyamira">Nyamira - Ksh400.00</option>
+                            <option value="Runyenjes">Runyenjes - Ksh400.00</option>
+                            <option value="Sabasaba">Sabasaba - Ksh400.00</option>
+                            <option value="Awendo">Awendo - Ksh420.00</option>
+                            <option value="Kitale">Kitale - Ksh420.00</option>
+                            <option value="Maua">Maua - Ksh420.00</option>
+                            <option value="Mbale">Mbale - Ksh420.00</option>
+                            <option value="Nandi Hills">Nandi Hills - Ksh420.00</option>
+                            <option value="Webuye">Webuye - Ksh420.00</option>
+                            <option value="Timau">Timau - Ksh430.00</option>
+                            <option value="Bondo">Bondo - Ksh450.00</option>
+                            <option value="Burnt Forest">Burnt Forest - Ksh450.00</option>
+                            <option value="Isiolo">Isiolo - Ksh450.00</option>
+                            <option value="Kabarnet">Kabarnet - Ksh450.00</option>
+                            <option value="Kapsabet">Kapsabet - Ksh450.00</option>
+                            <option value="Maseno">Maseno - Ksh450.00</option>
+                            <option value="Migori">Migori - Ksh450.00</option>
+                            <option value="Mtito Andei">Mtito Andei - Ksh450.00</option>
+                            <option value="Mumias">Mumias - Ksh450.00</option>
+                            <option value="Olkalau">Olkalau - Ksh450.00</option>
+                            <option value="Oloitoktok">Oloitoktok - Ksh450.00</option>
+                            <option value="Londiani">Londiani - Ksh460.00</option>
+                            <option value="Voi">Voi - Ksh460.00</option>
+                            <option value="Keroka">Keroka - Ksh480.00</option>
+                            <option value="Mombasa">Mombasa - Ksh480.00</option>
+                            <option value="Ahero">Ahero - Ksh500.00</option>
+                            <option value="Busia">Busia - Ksh500.00</option>
+                            <option value="Homabay">Homabay - Ksh500.00</option>
+                            <option value="Iten">Iten - Ksh500.00</option>
+                            <option value="Kilifi">Kilifi - Ksh500.00</option>
+                            <option value="Luanda">Luanda - Ksh500.00</option>
+                            <option value="Malaba">Malaba - Ksh500.00</option>
+                            <option value="Mariakani">Mariakani - Ksh500.00</option>
+                            <option value="Moi's Bridge">Moi's Bridge - Ksh500.00</option>
+                            <option value="Mtwapa">Mtwapa - Ksh500.00</option>
+                            <option value="Muhoroni">Muhoroni - Ksh500.00</option>
+                            <option value="Ogembo">Ogembo - Ksh500.00</option>
+                            <option value="Oyugis">Oyugis - Ksh500.00</option>
+                            <option value="Rongo">Rongo - Ksh500.00</option>
+                            <option value="Siaya">Siaya - Ksh500.00</option>
+                            <option value="Ugunja">Ugunja - Ksh500.00</option>
+                            <option value="Kimilili">Kimilili - Ksh540.00</option>
+                            <option value="Sabatia">Sabatia - Ksh540.00</option>
+                            <option value="Garissa">Garissa - Ksh550.00</option>
+                            <option value="Kapenguria">Kapenguria - Ksh550.00</option>
+                            <option value="Lugari">Lugari - Ksh550.00</option>
+                            <option value="Mukurweini">Mukurweini - Ksh550.00</option>
+                            <option value="Nambale">Nambale - Ksh550.00</option>
+                            <option value="Mwatate">Mwatate - Ksh580.00</option>
+                            <option value="Rachuonyo">Rachuonyo - Ksh580.00</option>
+                            <option value="Diani">Diani - Ksh600.00</option>
+                            <option value="Masii">Masii - Ksh600.00</option>
+                            <option value="Mwala">Mwala - Ksh600.00</option>
+                            <option value="Malindi">Malindi - Ksh620.00</option>
+                            <option value="Taveta">Taveta - Ksh620.00</option>
+                            <option value="Baraton">Baraton - Ksh650.0</option>
+                            <option value="Kehancha">Kehancha - Ksh650.00</option>
+                            <option value="Marsabit">Marsabit - Ksh650.00</option>
+                            <option value="Chwele">Chwele - Ksh680.00</option>
+                            <option value="Mbita">Mbita - Ksh700.00</option>
+                            <option value="Nzoia">Nzoia - Ksh700.00</option>
+                            <option value="Turbo">Turbo - Ksh700.00</option>
+                            <option value="Isebania">Isebania - Ksh750.00</option>
+                            <option value="Kendubay">Kendubay - Ksh750.00</option>
+                            <option value="Lamu">Lamu - Ksh1,400.00</option>
+                            <option value="Lodwar">Lodwar - Ksh1,500.00</option>
+                            <option value="Maralal">Maralal - Ksh1,600.00</option>
+                            <option value="Lokichogio">Lokichogio - Ksh1,650.00</option>
                         </select>
                         <shop-md-decorator aria-hidden="true">
                           <shop-underline></shop-underline>
                         </shop-md-decorator>
                       </shop-select>
-                    </div>
-                    <shop-select>
-                      <select id="ccExpYear" name="ccExpYear" required
-                          autocomplete="cc-exp-year" aria-label="Expiry year">
-                        <option value="2016" selected>2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                      </select>
-                      <shop-md-decorator aria-hidden="true">
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-select>
-                    <shop-input>
-                      <input type="tel" id="ccCVV" name="ccCVV" pattern="\\d{3,4}"
-                          placeholder="CVV" required
-                          autocomplete="cc-csc">
-                      <shop-md-decorator error-message="Invalid CVV" aria-hidden="true">
-                        <label for="ccCVV">CVV</label>
-                        <shop-underline></shop-underline>
-                      </shop-md-decorator>
-                    </shop-input>
-                  </div>
+                    </div>   
                   <h2>Order Summary</h2>
                   <dom-repeat items="[[cart]]" as="entry">
                     <template>
@@ -372,7 +314,7 @@ class ShopCheckout extends PolymerElement {
                     <div>[[_formatPrice(total)]]</div>
                   </div>
                   <shop-button responsive id="submitBox">
-                    <input type="button" on-click="_submit" value="Place Order">
+                    <input type="button" on-click="_submit" value="Pay">
                   </shop-button>
                 </section>
               </div>
@@ -651,7 +593,8 @@ class ShopCheckout extends PolymerElement {
   }
 
   _formatPrice(total) {
-    return isNaN(total) ? '' : '$' + total.toFixed(2);
+    let sum = total + 200;
+    return isNaN(sum) ? '' : 'KES ' + sum.toFixed(2);
   }
 
   _getEntryTotal(entry) {

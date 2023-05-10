@@ -304,7 +304,7 @@ class ShopCheckout extends PolymerElement {
                   <dom-repeat items="[[cart]]" as="entry">
                     <template>
                       <div class="row order-summary-row">
-                        <div class="flex">[[entry.item.title]]</div>
+                        <div class="flex">[[entry.item.title]] <b style="margin-left: 30px"> X  [[entry.quantity]]</b> </div> 
                         <div>[[_getEntryTotal(entry)]]</div>
                       </div>
                     </template>
